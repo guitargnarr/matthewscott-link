@@ -72,6 +72,17 @@ function App() {
       description: "Restaurant online presence",
       category: "Restaurant",
       details: "A Louisville staple for fresh seafood. Built a site that showcases the menu, captures the atmosphere, and makes reservations simple."
+    },
+    {
+      id: "nachbar",
+      title: "Nachbar",
+      url: "https://nachbar.vercel.app",
+      preview: "/previews/nachbar.png",
+      ogImage: "/og-images/nachbar-og.png",
+      qrCode: "/qr-codes/nachbar-qr.png",
+      description: "Germantown's neighborhood bar",
+      category: "Bar",
+      details: "Louisville's beloved dive bar since 2007. German & Belgian beers, live music, two dog-friendly patios. Built a site that captures the vibe and keeps regulars informed."
     }
   ];
 
