@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary Meta Tags -->
@@ -40,7 +42,7 @@
     <meta name="theme-color" content="#0f172a" />
     <meta name="msapplication-TileColor" content="#0f172a" />
 
-    <!-- JSON-LD Structured Data -->
+    <!-- JSON-LD Structured Data - Person -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -48,6 +50,8 @@
       "name": "Matthew Scott",
       "jobTitle": "Web Developer & Consultant",
       "url": "https://matthewscott-link.vercel.app",
+      "image": "https://matthewscott-link.vercel.app/headshot.png",
+      "email": "matthewdscott7@gmail.com",
       "sameAs": [
         "https://github.com/guitargnarr",
         "https://linkedin.com/in/mscott77"
@@ -58,7 +62,161 @@
         "addressRegion": "KY",
         "addressCountry": "US"
       },
-      "knowsAbout": ["Web Development", "React", "JavaScript", "Small Business Websites", "Web Consulting"]
+      "knowsAbout": ["Web Development", "React", "JavaScript", "Python", "Small Business Websites", "Web Consulting", "AI Integration"]
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data - Professional Service -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Matthew Scott Web Development",
+      "description": "Web development and consulting services for Louisville small and medium-sized businesses. Building practical web solutions that work.",
+      "url": "https://matthewscott-link.vercel.app",
+      "image": "https://matthewscott-link.vercel.app/og-image.png",
+      "telephone": "",
+      "email": "matthewdscott7@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Louisville",
+        "addressRegion": "KY",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "38.2527",
+        "longitude": "-85.7585"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Louisville",
+        "sameAs": "https://en.wikipedia.org/wiki/Louisville,_Kentucky"
+      },
+      "serviceType": ["Web Development", "Web Consulting", "Small Business Websites", "React Development"],
+      "priceRange": "$$"
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data - Portfolio/Creative Work -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Web Development Portfolio",
+      "description": "Deployed projects by Matthew Scott",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@type": "WebSite",
+            "name": "FretVision",
+            "description": "Interactive guitar fretboard with lessons and MIDI playback",
+            "url": "https://guitar.projectlavos.com"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@type": "WebSite",
+            "name": "PhishGuard",
+            "description": "Sentiment analysis NLP for anti-phishing detection",
+            "url": "https://phishguard.projectlavos.com"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "item": {
+            "@type": "WebSite",
+            "name": "Vantage",
+            "description": "Local job market analysis and automated resume tailoring",
+            "url": "https://jobs.projectlavos.com"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "item": {
+            "@type": "WebSite",
+            "name": "Fable & Flow",
+            "description": "Boutique retail brand website for Louisville business",
+            "url": "https://fableandflows.vercel.app"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "item": {
+            "@type": "WebSite",
+            "name": "JW Cafe",
+            "description": "Local cafe and bakery digital storefront",
+            "url": "https://jw-cafe-bakery.vercel.app"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "item": {
+            "@type": "WebSite",
+            "name": "Passtime Fish House",
+            "description": "Restaurant online presence for Louisville seafood staple",
+            "url": "https://passtime-fish-house.vercel.app"
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data - FAQ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What services does Matthew Scott offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Matthew Scott offers web development and consulting services for small and medium-sized businesses in Louisville, KY. Services include custom website development, React applications, web consulting, and helping businesses build their online presence."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Matthew Scott work with Louisville businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Matthew Scott specializes in helping Louisville small and medium-sized businesses build their online presence. Local clients include Fable & Flow, JW Cafe, and Passtime Fish House."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What technologies does Matthew Scott use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Matthew Scott works with modern web technologies including React, JavaScript, Python, and various AI integrations. Projects are deployed and running in production, not just demos."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- JSON-LD Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://matthewscott-link.vercel.app"
+        }
+      ]
     }
     </script>
   </head>

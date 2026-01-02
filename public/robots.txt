@@ -1,0 +1,9 @@
+# robots.txt for matthewscott-link.vercel.app
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://matthewscott-link.vercel.app/sitemap.xml
+
+# Crawl-delay (optional, respected by some bots)
+Crawl-delay: 1

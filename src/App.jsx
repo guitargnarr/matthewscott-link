@@ -196,7 +196,7 @@ function App() {
             <div className="flex flex-col items-center animate-fade-in">
               <img
                 src="/headshot.png"
-                alt="Matthew Scott"
+                alt="Matthew Scott - Web Developer and Consultant based in Louisville, Kentucky"
                 className="headshot w-40 h-40 md:w-48 md:h-48 rounded-full border-2 border-teal-500/30 object-cover shadow-[0_0_40px_rgba(20,184,166,0.25)]"
               />
               <p className="text-sm text-slate-500 mt-3 text-center">
@@ -339,7 +339,7 @@ function App() {
                   <div className={`overflow-hidden rounded-t-lg transition-all duration-300 ${isExpanded ? 'aspect-[16/6]' : 'aspect-[1200/630]'}`}>
                     <img
                       src={isHovered && !isExpanded ? project.gif : project.preview}
-                      alt={project.title}
+                      alt={`${project.title} - ${project.tagline}`}
                       className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
                     />
                   </div>
@@ -459,7 +459,7 @@ function App() {
                   <div className={`overflow-hidden bg-slate-800 transition-all duration-300 ${isClientExpanded ? 'aspect-[16/6]' : 'aspect-[1200/630]'}`}>
                     <img
                       src={client.preview}
-                      alt={client.title}
+                      alt={`${client.title} - ${client.description} - Louisville local business website`}
                       className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
                       onError={(e) => {
                         e.target.style.display = 'none';
