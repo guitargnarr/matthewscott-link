@@ -59,7 +59,7 @@ function App() {
       ogImage: "/og-images/jwcafe-og.png",
       qrCode: "/qr-codes/jwcafe-qr.png",
       description: "Local cafe & bakery digital storefront",
-      category: "Food & Beverage",
+      category: "Cafe",
       details: "A neighborhood cafe and bakery serving Louisville. Created an inviting online presence with menu, hours, and location—everything customers need at a glance."
     },
     {
@@ -70,7 +70,7 @@ function App() {
       ogImage: "/og-images/passtimefishhouse-og.png",
       qrCode: "/qr-codes/passtimefishhouse-qr.png",
       description: "Restaurant online presence",
-      category: "Food & Beverage",
+      category: "Restaurant",
       details: "A Louisville staple for fresh seafood. Built a site that showcases the menu, captures the atmosphere, and makes reservations simple."
     }
   ];
@@ -478,11 +478,11 @@ function App() {
                         <h3 className="text-sm font-semibold text-white">{client.title}</h3>
                         <p className={`text-xs text-slate-400 ${isClientExpanded ? '' : 'truncate'}`}>{client.description}</p>
                       </div>
-                      <div className="flex items-center gap-2">
-                        <span className="text-xs text-teal-400/70 bg-teal-500/10 px-2 py-0.5 rounded">
+                      <div className="flex items-center gap-2 flex-shrink-0">
+                        <span className="text-xs text-teal-400/70 bg-teal-500/10 px-2 py-0.5 rounded whitespace-nowrap">
                           {client.category}
                         </span>
-                        <span className={`text-teal-400 text-xs transition-transform duration-200 ${isClientExpanded ? 'rotate-180' : ''}`}>
+                        <span className={`text-teal-400 text-xs transition-transform duration-200 flex-shrink-0 ${isClientExpanded ? 'rotate-180' : ''}`}>
                           {isClientExpanded ? '▲' : '▼'}
                         </span>
                       </div>
