@@ -49,6 +49,7 @@ function App() {
       qrCode: "/qr-codes/fableflow-qr.png",
       description: "Boutique retail brand presence",
       category: "Retail",
+      specWork: false, // Paid client work
       details: "A curated boutique bringing unique finds to Louisville. Built a clean, modern storefront that reflects the brand's personality and makes discovery easy."
     },
     {
@@ -60,6 +61,7 @@ function App() {
       qrCode: "/qr-codes/jwcafe-qr.png",
       description: "Local cafe & bakery digital storefront",
       category: "Cafe",
+      specWork: true, // Spec work - business model in development
       details: "A neighborhood cafe and bakery serving Louisville. Created an inviting online presence with menu, hours, and location—everything customers need at a glance."
     },
     {
@@ -71,6 +73,7 @@ function App() {
       qrCode: "/qr-codes/passtimefishhouse-qr.png",
       description: "Restaurant online presence",
       category: "Restaurant",
+      specWork: true, // Spec work - business model in development
       details: "A Louisville staple for fresh seafood. Built a site that showcases the menu, captures the atmosphere, and makes reservations simple."
     },
     {
@@ -82,6 +85,7 @@ function App() {
       qrCode: "/qr-codes/nachbar-qr.png",
       description: "Germantown's neighborhood bar",
       category: "Bar",
+      specWork: true, // Spec work - business model in development
       details: "Louisville's beloved dive bar since 2007. German & Belgian beers, live music, two dog-friendly patios. Built a site that captures the vibe and keeps regulars informed."
     }
   ];
@@ -191,10 +195,10 @@ function App() {
         <div className="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
           <span className="text-teal-400 font-semibold text-sm">MS</span>
           <div className="flex gap-6 text-xs text-slate-400">
-            <a href="#method" className="hover:text-teal-400 transition-colors">Method</a>
-            <a href="#why" className="hover:text-teal-400 transition-colors">Why</a>
             <a href="#work" className="hover:text-teal-400 transition-colors">Work</a>
+            <a href="#method" className="hover:text-teal-400 transition-colors">Method</a>
             <a href="#louisville" className="hover:text-teal-400 transition-colors">Louisville</a>
+            <a href="#why" className="hover:text-teal-400 transition-colors">Why</a>
             <a href="#contact" className="hover:text-teal-400 transition-colors">Contact</a>
           </div>
         </div>
@@ -251,68 +255,7 @@ function App() {
         </div>
       </section>
 
-      {/* The Method Section */}
-      <section
-        id="method"
-        className={`px-6 md:px-12 lg:px-24 py-16 border-t border-slate-800 transition-all duration-700 ${visibleSections.method ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-      >
-        <div className="max-w-4xl">
-          <h2 className="text-2xl md:text-3xl font-semibold text-white mb-8">
-            The Method
-          </h2>
-
-          <p className="text-slate-300 leading-relaxed mb-6">
-            I synthesize. I take sprawling, messy domains—regulations, technical systems,
-            organizational processes—and build structured maps that operators and decision
-            makers can actually use. Not reports that sit in a drawer. Views that drive action.
-          </p>
-
-          <p className="text-slate-300 leading-relaxed mb-6">
-            My research method is simple: immerse, extract patterns, prototype, iterate.
-            I don't theorize from a distance. I get inside the problem, find what's actually
-            happening versus what people think is happening, and build something that proves
-            the insight works.
-          </p>
-
-          <p className="text-slate-300 leading-relaxed mb-8">
-            I've worked in scrappy startups and corporate grind houses. I see both sides—and
-            I'm going through. The proof is in the work.
-          </p>
-
-        </div>
-      </section>
-
-      {/* Why I Build Section */}
-      <section
-        id="why"
-        className={`px-6 md:px-12 lg:px-24 py-16 border-t border-slate-800 transition-all duration-700 ${visibleSections.why ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
-      >
-        <div className="max-w-4xl">
-          <h2 className="text-2xl md:text-3xl font-semibold text-white mb-8">
-            Why I Build
-          </h2>
-
-          <p className="text-slate-300 leading-relaxed mb-6">
-            Everything I build solves a real human problem—mine, someone else's, or a
-            business's. I don't build demos. I build tools that work, that ship, that
-            people actually use.
-          </p>
-
-          <p className="text-slate-300 leading-relaxed mb-6">
-            Right now, my focus is <span className="text-teal-400">Louisville first</span>.
-            I'm supporting local small and medium-sized businesses—the operators who don't
-            have the time or know-how to build the systems they need. The ones who are
-            drowning in complexity and need someone who can translate it into clarity.
-          </p>
-
-          <p className="text-slate-300 leading-relaxed">
-            If you're a Louisville SMB wrestling with process chaos, data you can't use,
-            or technology that's supposed to help but doesn't—that's where I work best.
-          </p>
-        </div>
-      </section>
-
-      {/* Work Section */}
+      {/* Work Section - Show work first */}
       <section
         ref={workSectionRef}
         id="work"
@@ -346,14 +289,16 @@ function App() {
                     ${expandedProject && !isExpanded ? 'opacity-60 scale-95' : 'opacity-100 scale-100'}
                   `}
                 >
-                  {/* OG Preview Image / GIF on Hover */}
-                  <div className={`overflow-hidden rounded-t-lg transition-all duration-300 ${isExpanded ? 'aspect-[16/6]' : 'aspect-[1200/630]'}`}>
-                    <img
-                      src={isHovered && !isExpanded ? project.gif : project.preview}
-                      alt={`${project.title} - ${project.tagline}`}
-                      className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
-                    />
-                  </div>
+                  {/* OG Preview Image / GIF on Hover - Hidden when expanded */}
+                  {!isExpanded && (
+                    <div className="overflow-hidden rounded-t-lg transition-all duration-300 aspect-[1200/630]">
+                      <img
+                        src={isHovered ? project.gif : project.preview}
+                        alt={`${project.title} - ${project.description}`}
+                        className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
 
                   {/* Card info */}
                   <div className="bg-slate-800 p-3 rounded-b-lg border-t border-slate-700">
@@ -439,6 +384,37 @@ function App() {
         </div>
       </section>
 
+      {/* The Method Section */}
+      <section
+        id="method"
+        className={`px-6 md:px-12 lg:px-24 py-16 border-t border-slate-800 transition-all duration-700 ${visibleSections.method ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      >
+        <div className="max-w-4xl">
+          <h2 className="text-2xl md:text-3xl font-semibold text-white mb-8">
+            The Method
+          </h2>
+
+          <p className="text-slate-300 leading-relaxed mb-6">
+            I synthesize. I take sprawling, messy domains—regulations, technical systems,
+            organizational processes—and build structured maps that operators and decision
+            makers can actually use. Not reports that sit in a drawer. Views that drive action.
+          </p>
+
+          <p className="text-slate-300 leading-relaxed mb-6">
+            My research method is simple: immerse, extract patterns, prototype, iterate.
+            I don't theorize from a distance. I get inside the problem, find what's actually
+            happening versus what people think is happening, and build something that proves
+            the insight works.
+          </p>
+
+          <p className="text-slate-300 leading-relaxed mb-8">
+            I've worked in scrappy startups and corporate grind houses. I see both sides—and
+            I'm going through. The proof is in the work.
+          </p>
+
+        </div>
+      </section>
+
       {/* Local Louisville Section */}
       <section
         id="louisville"
@@ -448,8 +424,11 @@ function App() {
           <h2 className="text-2xl md:text-3xl font-semibold text-white mb-2">
             Local Louisville
           </h2>
-          <p className="text-slate-400 mb-8">
+          <p className="text-slate-400 mb-4">
             Local first, always. Helping small and medium-sized businesses build their online presence—because every Louisville business deserves to be found.
+          </p>
+          <p className="text-xs text-slate-500 mb-8 italic">
+            Note: Projects marked "Spec Work" were built to demonstrate capability while solidifying my business model. Fable & Flow is paid client work.
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 transition-all duration-300">
@@ -486,7 +465,18 @@ function App() {
                   <div className="p-4">
                     <div className="flex justify-between items-start mb-2">
                       <div className="flex-1">
-                        <h3 className="text-sm font-semibold text-white">{client.title}</h3>
+                        <div className="flex items-center gap-2 mb-1">
+                          <h3 className="text-sm font-semibold text-white">{client.title}</h3>
+                          {client.specWork ? (
+                            <span className="text-[10px] text-orange-400/80 bg-orange-500/10 px-1.5 py-0.5 rounded border border-orange-500/20">
+                              Spec Work
+                            </span>
+                          ) : (
+                            <span className="text-[10px] text-green-400/80 bg-green-500/10 px-1.5 py-0.5 rounded border border-green-500/20">
+                              Client
+                            </span>
+                          )}
+                        </div>
                         <p className={`text-xs text-slate-400 ${isClientExpanded ? '' : 'truncate'}`}>{client.description}</p>
                       </div>
                       <div className="flex items-center gap-2 flex-shrink-0">
@@ -584,6 +574,36 @@ function App() {
           <p className="text-slate-500 text-sm mt-8 text-center">
             Are you a Louisville business looking to establish or improve your online presence?{' '}
             <a href="mailto:matthewdscott7@gmail.com" className="text-teal-400 hover:text-teal-300 transition-colors">Let's talk.</a>
+          </p>
+        </div>
+      </section>
+
+      {/* Why I Build Section */}
+      <section
+        id="why"
+        className={`px-6 md:px-12 lg:px-24 py-16 border-t border-slate-800 transition-all duration-700 ${visibleSections.why ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      >
+        <div className="max-w-4xl">
+          <h2 className="text-2xl md:text-3xl font-semibold text-white mb-8">
+            Why I Build
+          </h2>
+
+          <p className="text-slate-300 leading-relaxed mb-6">
+            Everything I build solves a real human problem—mine, someone else's, or a
+            business's. I don't build demos. I build tools that work, that ship, that
+            people actually use.
+          </p>
+
+          <p className="text-slate-300 leading-relaxed mb-6">
+            Right now, my focus is <span className="text-teal-400">Louisville first</span>.
+            I'm supporting local small and medium-sized businesses—the operators who don't
+            have the time or know-how to build the systems they need. The ones who are
+            drowning in complexity and need someone who can translate it into clarity.
+          </p>
+
+          <p className="text-slate-300 leading-relaxed">
+            If you're a Louisville SMB wrestling with process chaos, data you can't use,
+            or technology that's supposed to help but doesn't—that's where I work best.
           </p>
         </div>
       </section>
