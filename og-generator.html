@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 1200px;
+      height: 630px;
+      background: #0f172a;
+      font-family: 'JetBrains Mono', monospace;
+      display: flex;
+      align-items: center;
+      padding: 60px;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      width: 100%;
+    }
+
+    .headshot-wrapper {
+      flex-shrink: 0;
+    }
+
+    .headshot {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 3px solid #334155;
+      object-fit: cover;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    .name {
+      font-size: 56px;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .tagline {
+      font-size: 24px;
+      font-weight: 500;
+      color: #14b8a6;
+      margin-bottom: 8px;
+    }
+
+    .role {
+      font-size: 18px;
+      font-weight: 400;
+      color: #94a3b8;
+      margin-bottom: 32px;
+    }
+
+    .principles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+    }
+
+    .principle {
+      font-size: 13px;
+      color: #2dd4bf;
+      padding: 6px 12px;
+      background: rgba(20, 184, 166, 0.1);
+      border: 1px solid rgba(20, 184, 166, 0.3);
+      border-radius: 4px;
+    }
+
+    .accent-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #14b8a6, #2dd4bf, #14b8a6);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="headshot-wrapper">
+      <img src="file:///Users/matthewscott/Projects/matthewscott-link/public/headshot.png" alt="Matthew Scott" class="headshot">
+    </div>
+    <div class="content">
+      <div class="name">MATTHEW SCOTT</div>
+      <div class="tagline">Ideas. Creativity. Purpose.</div>
+      <div class="role">Web Architect / Louisville, KY</div>
+      <div class="principles">
+        <span class="principle">Truth over theater</span>
+        <span class="principle">Guardrails over vibes</span>
+        <span class="principle">Zero-trust by default</span>
+        <span class="principle">Human impact first</span>
+      </div>
+    </div>
+  </div>
+  <div class="accent-bar"></div>
+</body>
+</html>
