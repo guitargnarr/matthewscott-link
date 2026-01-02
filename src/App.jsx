@@ -48,6 +48,7 @@ function App() {
       ogImage: "/og-images/fableflow-og.png",
       qrCode: "/qr-codes/fableflow-qr.png",
       description: "Boutique retail brand presence",
+      altText: "Fable & Flow Louisville boutique retail website featuring curated home goods and unique local finds",
       category: "Retail",
       specWork: false, // Paid client work
       details: "A curated boutique bringing unique finds to Louisville. Built a clean, modern storefront that reflects the brand's personality and makes discovery easy."
@@ -60,6 +61,7 @@ function App() {
       ogImage: "/og-images/jwcafe-og.png",
       qrCode: "/qr-codes/jwcafe-qr.png",
       description: "Local cafe & bakery digital storefront",
+      altText: "JW Cafe and Bakery Louisville website showing menu, hours, and location for neighborhood coffee shop",
       category: "Cafe",
       specWork: true, // Spec work - business model in development
       details: "A neighborhood cafe and bakery serving Louisville. Created an inviting online presence with menu, hours, and location—everything customers need at a glance."
@@ -72,6 +74,7 @@ function App() {
       ogImage: "/og-images/passtimefishhouse-og.png",
       qrCode: "/qr-codes/passtimefishhouse-qr.png",
       description: "Restaurant online presence",
+      altText: "Passtime Fish House Louisville seafood restaurant website with menu and reservations",
       category: "Restaurant",
       specWork: true, // Spec work - business model in development
       details: "A Louisville staple for fresh seafood. Built a site that showcases the menu, captures the atmosphere, and makes reservations simple."
@@ -84,6 +87,7 @@ function App() {
       ogImage: "/og-images/nachbar-og.png",
       qrCode: "/qr-codes/nachbar-qr.png",
       description: "Germantown's neighborhood bar",
+      altText: "Nachbar Germantown Louisville neighborhood bar website featuring German and Belgian beers, live music schedule",
       category: "Bar",
       specWork: true, // Spec work - business model in development
       details: "Louisville's beloved dive bar since 2007. German & Belgian beers, live music, two dog-friendly patios. Built a site that captures the vibe and keeps regulars informed."
@@ -100,10 +104,12 @@ function App() {
       preview: "/previews/portfolio.png",
       gif: "/demos/portfolio-demo.gif",
       description: "The complete picture",
+      altText: "Matthew Scott's full portfolio website showing all deployed projects including FretVision, PhishGuard, and Vantage",
       demos: [
         { type: "image", src: "/demos/portfolio-demo.gif", caption: "Browsing the portfolio" }
       ],
-      rationale: "A central hub showcasing all deployed projects under one roof."
+      rationale: "A central hub showcasing all deployed projects under one roof.",
+      relatedProjects: ["fretvision", "phishguard", "vantage"]
     },
     {
       id: "fretvision",
@@ -112,10 +118,12 @@ function App() {
       preview: "/previews/guitar.png",
       gif: "/demos/fretvision-demo.gif",
       description: "Interactive fretboard, lessons, MIDI playback",
+      altText: "FretVision guitar learning app showing interactive fretboard visualization with scale patterns and MIDI playback controls",
       demos: [
         { type: "image", src: "/demos/fretvision-demo.gif", caption: "Navigating the Riff Generator and Fretboard" }
       ],
-      rationale: "Guitar learning apps exist, but none combine fretboard visualization, tab playback, and riff generation in one place. I built this to prove that AI-assisted development can produce real educational tools—not just demos. The riff generator uses deterministic Python for music theory (LLMs can't count frets accurately) with AI only for style interpretation."
+      rationale: "Guitar learning apps exist, but none combine fretboard visualization, tab playback, and riff generation in one place. I built this to prove that AI-assisted development can produce real educational tools—not just demos. The riff generator uses deterministic Python for music theory (LLMs can't count frets accurately) with AI only for style interpretation.",
+      relatedProjects: ["portfolio", "jobtrack"]
     },
     {
       id: "phishguard",
@@ -124,10 +132,12 @@ function App() {
       preview: "/previews/phishguard.png",
       gif: "/demos/phishguard-demo.gif",
       description: "Sentiment analysis NLP for anti-phishing",
+      altText: "PhishGuard email security tool analyzing suspicious email content for phishing indicators using sentiment analysis",
       demos: [
         { type: "image", src: "/demos/phishguard-demo.gif", caption: "Analyzing email for phishing patterns" }
       ],
-      rationale: "Phishing attacks exploit human psychology, not just technical vulnerabilities. PhishGuard analyzes email sentiment patterns to flag manipulation tactics before they reach the inbox."
+      rationale: "Phishing attacks exploit human psychology, not just technical vulnerabilities. PhishGuard analyzes email sentiment patterns to flag manipulation tactics before they reach the inbox.",
+      relatedProjects: ["vantage", "portfolio"]
     },
     {
       id: "vantage",
@@ -136,10 +146,12 @@ function App() {
       preview: "/previews/jobs.png",
       gif: "/demos/vantage-demo.gif",
       description: "Local job market analysis, data enrichment, automated resume tailoring",
+      altText: "Vantage job market analytics dashboard showing Louisville KY employment trends and company hiring patterns",
       demos: [
         { type: "image", src: "/demos/vantage-demo.gif", caption: "Exploring Louisville job market insights" }
       ],
-      rationale: "Job boards show listings. Vantage shows patterns—which companies are hiring, what skills are trending locally, and how to position yourself. Built for Louisville first."
+      rationale: "Job boards show listings. Vantage shows patterns—which companies are hiring, what skills are trending locally, and how to position yourself. Built for Louisville first.",
+      relatedProjects: ["jobtrack", "phishguard"]
     },
     {
       id: "ourjourney",
@@ -148,10 +160,12 @@ function App() {
       preview: "/previews/ourjourney.png",
       gif: "/demos/ourjourney-demo.gif",
       description: "A private space for couples to catalog experiences",
+      altText: "OurJourney couple experience tracker app showing shared memories and private journal entries",
       demos: [
         { type: "image", src: "/demos/ourjourney-demo.gif", caption: "Navigating the shared experience tracker" }
       ],
-      rationale: "Social media makes sharing performative. OurJourney is the opposite—a private space for two people to document what matters to them, without an audience."
+      rationale: "Social media makes sharing performative. OurJourney is the opposite—a private space for two people to document what matters to them, without an audience.",
+      relatedProjects: ["portfolio", "jobtrack"]
     },
     {
       id: "jobtrack",
@@ -160,10 +174,12 @@ function App() {
       preview: "/previews/jobtrack.png",
       gif: "/demos/jobtrack-demo.gif",
       description: "Application tracking system",
+      altText: "JobTrack application tracking dashboard showing job applications, response rates, and interview pipeline",
       demos: [
         { type: "image", src: "/demos/jobtrack-demo.gif", caption: "Managing job applications" }
       ],
-      rationale: "Spreadsheets work until they don't. JobTrack adds structure to the job search grind—tracking applications, follow-ups, and outcomes in one place."
+      rationale: "Spreadsheets work until they don't. JobTrack adds structure to the job search grind—tracking applications, follow-ups, and outcomes in one place.",
+      relatedProjects: ["vantage", "fretvision"]
     }
   ];
 
@@ -294,8 +310,9 @@ function App() {
                     <div className="overflow-hidden rounded-t-lg transition-all duration-300 aspect-[1200/630]">
                       <img
                         src={isHovered ? project.gif : project.preview}
-                        alt={`${project.title} - ${project.description}`}
+                        alt={project.altText || `${project.title} - ${project.description}`}
                         className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+                        loading="lazy"
                       />
                     </div>
                   )}
@@ -357,6 +374,32 @@ function App() {
                           <p className="text-sm text-slate-300 leading-relaxed mb-4 animate-fade-in">
                             {project.rationale}
                           </p>
+                        )}
+
+                        {/* Related Projects - Internal Linking for SEO */}
+                        {project.relatedProjects && project.relatedProjects.length > 0 && (
+                          <div className="mb-4">
+                            <p className="text-xs text-slate-500 mb-2 uppercase tracking-wide">Related Projects</p>
+                            <div className="flex flex-wrap gap-2">
+                              {project.relatedProjects.map(relatedId => {
+                                const relatedProject = projects.find(p => p.id === relatedId);
+                                if (!relatedProject) return null;
+                                return (
+                                  <button
+                                    key={relatedId}
+                                    onClick={(e) => {
+                                      e.stopPropagation();
+                                      setExpandedProject(relatedId);
+                                      setShowRationale(false);
+                                    }}
+                                    className="px-3 py-1 text-xs bg-slate-700 hover:bg-slate-600 text-teal-400 rounded transition-colors"
+                                  >
+                                    {relatedProject.title}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </div>
                         )}
 
                         {/* Action Buttons */}
@@ -449,8 +492,9 @@ function App() {
                   <div className={`overflow-hidden bg-slate-800 transition-all duration-300 ${isClientExpanded ? 'aspect-[16/6]' : 'aspect-[1200/630]'}`}>
                     <img
                       src={client.preview}
-                      alt={`${client.title} - ${client.description} - Louisville local business website`}
+                      alt={client.altText || `${client.title} - ${client.description} - Louisville local business website`}
                       className="w-full h-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
+                      loading="lazy"
                       onError={(e) => {
                         e.target.style.display = 'none';
                         e.target.nextSibling.style.display = 'flex';
